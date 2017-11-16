@@ -47,7 +47,11 @@ public class ResultToUserTest {
         }
         testArray(resultList, expectedResultList);
 
+
+        System.out.println(4/3);
+        System.out.println(4%3);
     }
+
     public void testArray(List<ResultModel> actualList, List<ResultModel> expectedList){
         assertEquals(actualList.size(), expectedList.size());
         for (int i = 0; i < expectedList.size(); i++) {
@@ -61,5 +65,7 @@ public class ResultToUserTest {
                 System.out.println("Total Cost : " + actualList.get(i).getTotalCost() + " : " + expectedList.get(i).getTotalCost());
         }
     }
+
+
 
 }

@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>pl.akademiakodu</groupId>
-	<artifactId>AK_Spring_ExerciseMethod_BasicCalculator</artifactId>
+	<artifactId>AK_Spring_Exercise_RentCar_Basic</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>AK_Spring_ExerciseMethod_BasicCalculator</name>
+	<name>AK_Spring_Exercise_RentCar_Basic</name>
 	<description>For practise</description>
 
 	<parent>
