@@ -1,3 +1,4 @@
+#Java Basic by AkademiaKodu.pl 2017
 
 Your task is to implements methods in corrected way. Make those methods work and simulator will run properly! 
 Method to implement: 
