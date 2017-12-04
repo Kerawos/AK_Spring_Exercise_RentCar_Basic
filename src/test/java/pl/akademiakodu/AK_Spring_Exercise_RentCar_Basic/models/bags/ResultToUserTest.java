@@ -1,16 +1,25 @@
 package pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models.bags;
 
+/**
+ * Imports section
+ */
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models.OptimalCarFounder;
-import pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models.ResultToUser;
+import pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models.CarModel;
+import pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models.ResultModel;
+import pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models.UserPreferencesModel;
+import pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models.services.OptimalCarFounder;
+import pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models.services.ResultToUser;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * Class responsible for testing result logic
+ */
 public class ResultToUserTest {
 
     private static ResultToUser resultToUser;
@@ -26,7 +35,10 @@ public class ResultToUserTest {
         optimalCarFounder = null;
     }
 
-    @Test public void test1(){
+    /**
+     * Method testing result logic
+     */
+    @Test public void testResult(){
         CarModel fiat500 = new CarModel("Fiat500", 2, 4, 50000);
         CarModel fiat124 = new CarModel("Fiat124p",  4, 8, 5000);
         CarModel clio = new CarModel("RenaultClio",  5, 5, 40000);
@@ -46,12 +58,13 @@ public class ResultToUserTest {
                     resultList.get(i).getExtraDayCost()+ ", " + resultList.get(i).getExtraDistanceCostPer100Km());
         }
         testArray(resultList, expectedResultList);
-
-
-        System.out.println(4/3);
-        System.out.println(4%3);
     }
 
+    /**
+     * Method to comparing two arrays each other
+     * @param actualList
+     * @param expectedList
+     */
     public void testArray(List<ResultModel> actualList, List<ResultModel> expectedList){
         assertEquals(actualList.size(), expectedList.size());
         for (int i = 0; i < expectedList.size(); i++) {
@@ -65,7 +78,5 @@ public class ResultToUserTest {
                 System.out.println("Total Cost : " + actualList.get(i).getTotalCost() + " : " + expectedList.get(i).getTotalCost());
         }
     }
-
-
 
 }

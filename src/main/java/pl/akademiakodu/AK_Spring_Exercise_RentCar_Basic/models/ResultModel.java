@@ -1,12 +1,21 @@
-package pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models.bags;
+package pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models;
 
+/**
+ * Class for holding results as object.
+ */
 public class ResultModel {
 
+    /**
+     * Variables declarations
+     */
     private CarModel carModel;
     private int totalCost;
     private int extraDayCost;
     private int extraDistanceCostPer100Km;
 
+    /**
+     * constructors
+     */
     public ResultModel(CarModel carModel, int totalCost, int extraDayCost, int extraDistanceCostPer100Km) {
         this.carModel = carModel;
         this.totalCost = totalCost;
@@ -14,6 +23,9 @@ public class ResultModel {
         this.extraDistanceCostPer100Km = extraDistanceCostPer100Km;
     }
 
+    /**
+     * Getters and setters section
+     */
     public CarModel getCarModel() {
         return carModel;
     }

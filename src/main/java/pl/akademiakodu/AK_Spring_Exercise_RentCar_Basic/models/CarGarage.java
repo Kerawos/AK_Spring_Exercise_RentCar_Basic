@@ -1,17 +1,27 @@
 package pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models;
 
-import pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models.bags.CarModel;
+/**
+ * Imports section
+ */
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class responsible for storage all available cars in this exercise
+ */
 public class CarGarage {
 
+    /**
+     * Variable declaration
+     */
+    private List<CarModel> availableModels;
 
-    private static List<CarModel> availableModels;
-
-
-    public static List<CarModel> getAvailableModels() {
+    /**
+     * Method gets available cars from gartge
+     * @return car list
+     */
+    public List<CarModel> getAvailableModels() {
         availableModels = new ArrayList<>();
         availableModels.add(new CarModel("Fiat500", 2, 4, 50000));
         availableModels.add(new CarModel("Fiat124p",  4, 8, 5000));
@@ -25,7 +35,11 @@ public class CarGarage {
         return availableModels;
     }
 
-    public static int getNumberOfAvailableModels(){
+    /**
+     * Method calculating current cars available in garage
+     * @return number of current car available
+     */
+    public int getNumberOfAvailableModels(){
         return getAvailableModels().size();
     }
 

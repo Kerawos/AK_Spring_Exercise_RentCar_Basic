@@ -1,24 +1,40 @@
-package pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models;
+package pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models.services;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-import pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models.bags.CarModel;
-import pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models.bags.ResultModel;
-import pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models.bags.UserPreferencesModel;
+/**
+ * Imports section
+ */
 
-import java.util.ArrayList;
+import org.springframework.stereotype.Service;
+import pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models.CarGarage;
+import pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models.CarModel;
+import pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models.UserPreferencesModel;
+
 import java.util.List;
 
+/**
+ * Service responsible for calculating optimal car to rent
+ */
+@Service
 public class OptimalCarFounder {
 
+    /**
+     * Variables and services declarations
+     */
     private List<CarModel> listOfPotentialCarsToRent;
     private int potentialLeftMoney;
     private int potentialTotalDailyCost;
     private int potentialDistanceCost;
     private CostCalculator costCalculator;
+    private CarGarage carGarage;
 
-
+    /**
+     * Method calculating potential car to rent based on user inputs
+     * @param userPreferencesModel stored user inputs
+     * @return list of potential cars to rent
+     */
     public List<CarModel> optimalCarsToRent(UserPreferencesModel userPreferencesModel){
-        listOfPotentialCarsToRent = CarGarage.getAvailableModels();
+        carGarage = new CarGarage();
+        listOfPotentialCarsToRent = carGarage.getAvailableModels();
         costCalculator = new CostCalculator();
         for (int i = 0; i < listOfPotentialCarsToRent.size(); i++) {
             //1. check passenger capacity
@@ -39,7 +55,6 @@ public class OptimalCarFounder {
                 }
             }
         }
-
         return listOfPotentialCarsToRent;
     }
 

@@ -1,12 +1,21 @@
-package pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models.bags;
+package pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models;
 
+/**
+ * Class for holding user input as object.
+ */
 public class UserPreferencesModel {
 
+    /**
+     * Variables declarations
+     */
     private int moneyForRent;
     private int rentDuration;
     private int proximalDistance;
     private int passengerCapacity;
 
+    /**
+     * constructors
+     */
     public UserPreferencesModel() {
     }
 
@@ -17,6 +26,9 @@ public class UserPreferencesModel {
         this.passengerCapacity = passengerCapacity;
     }
 
+    /**
+     * Getters and setters section
+     */
     public int getMoneyForRent() {
         return moneyForRent;
     }
