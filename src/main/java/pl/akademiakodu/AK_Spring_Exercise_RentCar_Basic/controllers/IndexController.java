@@ -1,5 +1,8 @@
 package pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.controllers;
 
+/**
+ * Import section
+ */
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,22 +17,37 @@ import pl.akademiakodu.AK_Spring_Exercise_RentCar_Basic.models.bags.UserPreferen
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Control main page with exercise
+ */
 @Controller
 public class IndexController {
 
-    //declarations
+    /**
+     * Declaration of variables
+     */
     OptimalCarFounder optimalCarFounder;
     ResultToUser resultToUser;
     List<CarModel> potentialRentCarList;
     List<ResultModel> resultModelList;
     StringBuilder sb;
 
-
+    /**
+     * Method get user inputs and moving them to post method
+     * @param model stored user inputs
+     * @return filled user input model
+     */
     @GetMapping("/") public String getIndex(Model model){
         model.addAttribute("userPreferencesModel", new UserPreferencesModel());
         return "index";
     }
 
+    /**
+     * Method managing given user inputs and showing to user calculated results
+     * @param userPreferencesModel given user inputs
+     * @param model to display messages to user
+     * @return calculated results. Potential rent car costs.
+     */
     @PostMapping("/") public String postIndex(@ModelAttribute UserPreferencesModel userPreferencesModel, Model model){
 
         //initializations
